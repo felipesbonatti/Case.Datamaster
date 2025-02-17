@@ -1,32 +1,79 @@
-# Case Churn - DataMaster 
+# 📊 Case Churn - DataMaster
 
-## Resumo:
- Avaliação de Churn O objetivo principal deste estudo é avaliar a probabilidade de churn dos clientes de um serviço de streaming nos próximos três meses, com a intenção de implementar políticas e ações que evitem a concretização desse cenário.  O problema está dividido em duas partes:  Previsão de Churn e Análise Não Supervisionada (comportamental)
+[![GitHub last commit](https://img.shields.io/github/last-commit/felipesbonatti/Case.Datamaster?style=flat-square)](https://github.com/felipesbonatti/Case.Datamaster)
+[![GitHub repo size](https://img.shields.io/github/repo-size/felipesbonatti/Case.Datamaster?style=flat-square)](https://github.com/felipesbonatti/Case.Datamaster)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-📝 Descrição:
-Modelo preditivo de churn utilizando Python, Pandas, PySpark e SQL. Aplicação de machine learning para prever evasão de clientes.
+<p align="center">
+  <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="Logo GitHub" width="100">
+</p>
 
-🛠️ Tecnologias: Python, Scikit-learn, Pandas, SQL, PySpark
+---
 
-### Case:
+## 📌 Sobre o Projeto
 
- análise da evasão de clientes (churn) através de um modelo de classificação.
+Este repositório apresenta um **estudo de caso sobre previsão de churn (evasão de clientes)** em um serviço de streaming. O objetivo principal é **avaliar a probabilidade de churn nos próximos três meses** e, com base nessa previsão, implementar políticas e ações para evitar a perda de clientes.
 
-A definição do alvo (target) é guiada por alguns aspectos-chave: o cliente está inativo? Cancelou seu plano? Não ouviu música nos últimos três meses?
+O projeto está dividido em duas partes principais:
+1. **Previsão de Churn:** Desenvolvimento de um modelo preditivo utilizando técnicas de machine learning.
+2. **Análise Não Supervisionada:** Análise comportamental dos clientes para identificar padrões e segmentos.
 
-Para prever a saída de um cliente, é crucial observar a relação entre diferentes variáveis. Para isso, a avaliação de diversos cenários e hipóteses se torna necessária, algumas delas incluem:
+---
 
-Comportamento histórico do cliente: Qual foi o valor da sua assinatura e quanto música ele ouviu nos meses anteriores? Existe uma correlação com a possibilidade de churn? Características socioeconômicas: Idade, gênero, cidade e canal de aquisição influenciam a taxa de churn? 
-Relação entre a quantidade ouvida no mês anterior e o churn: Existe uma conexão significativa? 
-Dias desde o registro: Clientes mais novos apresentam maior propensão ao churn? 
+## 🎯 Objetivo
 
-Além de testar essas hipóteses, é fundamental compreender como os dados se comportam e se relacionam com o nosso alvo, mantendo apenas as variáveis que são realmente importantes e que influenciam o problema em estudo.
+O objetivo deste estudo é **prever a evasão de clientes (churn)** e **entender os fatores que influenciam essa decisão**. Para isso, foram considerados os seguintes aspectos:
 
-Dessa forma, dividiremos nosso processo em dois capítulos, cada um contendo as seguintes subfases:
+- **Definição do Alvo (Target):**
+  - O cliente está inativo?
+  - Cancelou seu plano?
+  - Não ouviu música nos últimos três meses?
 
-1. Modelo de Previsão de Churn Análise superficial dos dados
-2. Análise exploratória Definição das variáveis para treinamento
-3. Construção do alvo (target) Seleção de Features Divisão em conjuntos de treinamento e teste
-4. Treinamento do algoritmo Hiperparametrização
-5. Previsão do futuro e conclusão
-6. Conclusão Análise Não Supervisionada Normalização e PCA (Análise de Componentes Principais) Amostragem K-means
+- **Hipóteses Analisadas:**
+  - Comportamento histórico do cliente (valor da assinatura, quantidade de música ouvida).
+  - Características socioeconômicas (idade, gênero, cidade, canal de aquisição).
+  - Relação entre a quantidade de música ouvida no mês anterior e o churn.
+  - Dias desde o registro (clientes mais novos têm maior propensão ao churn?).
+
+---
+
+## ⚙️ Solução Entregue
+
+### 1. **Modelo de Previsão de Churn**
+   - **Análise Exploratória:** Compreensão do comportamento dos dados e suas relações.
+   - **Seleção de Features:** Identificação das variáveis mais relevantes para o modelo.
+   - **Treinamento do Algoritmo:** Utilização de técnicas de machine learning para prever churn.
+   - **Hiperparametrização:** Ajuste dos parâmetros do modelo para melhorar a precisão.
+   - **Previsão e Conclusão:** Avaliação do modelo e interpretação dos resultados.
+
+### 2. **Análise Não Supervisionada**
+   - **Normalização e PCA:** Redução da dimensionalidade dos dados.
+   - **Amostragem e K-means:** Segmentação dos clientes em grupos com comportamentos semelhantes.
+
+---
+
+## 📊 Resultados
+
+O projeto resultou em:
+- **Modelo Preditivo de Churn:** Capaz de identificar clientes com alta probabilidade de evasão.
+- **Segmentação de Clientes:** Identificação de grupos com comportamentos distintos.
+- **Insights Estratégicos:** Recomendações para reduzir a taxa de churn e melhorar a retenção de clientes.
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas">
+  <img src="https://img.shields.io/badge/Scikit_Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white" alt="Scikit-learn">
+  <img src="https://img.shields.io/badge/PySpark-E25A1C?style=for-the-badge&logo=apache-spark&logoColor=white" alt="PySpark">
+  <img src="https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white" alt="SQL">
+</div>
+
+- **Linguagem de Programação:** [Python](https://www.python.org/)
+- **Bibliotecas:** Pandas, Scikit-learn, PySpark
+- **Banco de Dados:** SQL
+- **Ferramentas de Análise:** Jupyter Notebook, PCA, K-means
+
+
