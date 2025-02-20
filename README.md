@@ -77,3 +77,6 @@ O projeto resultou em:
 - **Ferramentas de Análise:** Jupyter Notebook, PCA, K-means
 
 
+## 💻 Autor
+
+- **Felipe Bonatti** - [GitHub](https://github.com/felipesbonatti) | [LinkedIn](https://www.linkedin.com/in/felipebsdelima)
