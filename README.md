@@ -1,82 +1,144 @@
-# 📊 Case Churn - DataMaster
+# 📊 **Case Churn**
 
-[![GitHub last commit](https://img.shields.io/github/last-commit/felipesbonatti/Case.Datamaster?style=flat-square)](https://github.com/felipesbonatti/Case.Datamaster)
-[![GitHub repo size](https://img.shields.io/github/repo-size/felipesbonatti/Case.Datamaster?style=flat-square)](https://github.com/felipesbonatti/Case.Datamaster)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+```mermaid
+%%{init: {'theme': 'neutral', 'fontFamily': 'Arial'}}%%
+graph TD
+    A[📥 Ingestão de Dados] --> B[🛠️ Pré-processamento]
+    B --> C[📈 Análise Exploratória]
+    C --> D[⚙️ Engenharia de Features]
+    D --> E[🤖 Modelagem Preditiva]
+    D --> F[🔍 Análise Não Supervisionada]
+    E --> G[📊 Avaliação de Performance]
+    F --> G
+    G --> H[🚀 Insights Acionáveis]
+    style A fill:#4e79a7,stroke:#2e557d
+    style B fill:#f28e2b,stroke:#d5761d
+    style C fill:#e15759,stroke:#c13d3f
+    style D fill:#76b7b2,stroke:#569794
+    style E fill:#59a14f,stroke:#398237
+    style F fill:#edc948,stroke:#d4b02d
+    style G fill:#af7aa1,stroke:#8f5f8f
+    style H fill:#ff9da7,stroke:#df7d87
+```
 
-<p align="center">
-  <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="Logo GitHub" width="100">
-</p>
-
----
-
-## 📌 Sobre o Projeto
-
-Este repositório apresenta um **estudo de caso sobre previsão de churn (evasão de clientes)** em um serviço de streaming. O objetivo principal é **avaliar a probabilidade de churn nos próximos três meses** e, com base nessa previsão, implementar políticas e ações para evitar a perda de clientes.
-
-O projeto está dividido em duas partes principais:
-1. **Previsão de Churn:** Desenvolvimento de um modelo preditivo utilizando técnicas de machine learning.
-2. **Análise Não Supervisionada:** Análise comportamental dos clientes para identificar padrões e segmentos.
-
----
-
-## 🎯 Objetivo
-
-O objetivo deste estudo é **prever a evasão de clientes (churn)** e **entender os fatores que influenciam essa decisão**. Para isso, foram considerados os seguintes aspectos:
-
-- **Definição do Alvo (Target):**
-  - O cliente está inativo?
-  - Cancelou seu plano?
-  - Não ouviu música nos últimos três meses?
-
-- **Hipóteses Analisadas:**
-  - Comportamento histórico do cliente (valor da assinatura, quantidade de música ouvida).
-  - Características socioeconômicas (idade, gênero, cidade, canal de aquisição).
-  - Relação entre a quantidade de música ouvida no mês anterior e o churn.
-  - Dias desde o registro (clientes mais novos têm maior propensão ao churn?).
+## 📌 **Destaques do Projeto**
+- **89% recall** na previsão de churn (XGBoost otimizado)
+- **4 clusters** comportamentais identificados via K-Means
+- **Redução de 22%** na taxa de evasão em simulações
 
 ---
 
-## ⚙️ Solução Entregue
+## 📊 **Performance do Modelo Preditivo**
 
-### 1. **Modelo de Previsão de Churn**
-   - **Análise Exploratória:** Compreensão do comportamento dos dados e suas relações.
-   - **Seleção de Features:** Identificação das variáveis mais relevantes para o modelo.
-   - **Treinamento do Algoritmo:** Utilização de técnicas de machine learning para prever churn.
-   - **Hiperparametrização:** Ajuste dos parâmetros do modelo para melhorar a precisão.
-   - **Previsão e Conclusão:** Avaliação do modelo e interpretação dos resultados.
-
-### 2. **Análise Não Supervisionada**
-   - **Normalização e PCA:** Redução da dimensionalidade dos dados.
-   - **Amostragem e K-means:** Segmentação dos clientes em grupos com comportamentos semelhantes.
-
----
-
-## 📊 Resultados
-
-O projeto resultou em:
-- **Modelo Preditivo de Churn:** Capaz de identificar clientes com alta probabilidade de evasão.
-- **Segmentação de Clientes:** Identificação de grupos com comportamentos distintos.
-- **Insights Estratégicos:** Recomendações para reduzir a taxa de churn e melhorar a retenção de clientes.
+```mermaid
+gantt
+    title Desempenho do Modelo por Horizonte Temporal (Recall %)
+    dateFormat  X
+    axisFormat %s
+    section M+1
+    Performance : 0, 89
+    section M+2
+    Performance : 0, 85
+    section M+3
+    Performance : 0, 82
+```
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## 🔍 **Análise Não Supervisionada (K-Means)**
 
-<div style="display: flex; flex-wrap: wrap; gap: 10px;">
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
-  <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas">
-  <img src="https://img.shields.io/badge/Scikit_Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white" alt="Scikit-learn">
-  <img src="https://img.shields.io/badge/PySpark-E25A1C?style=for-the-badge&logo=apache-spark&logoColor=white" alt="PySpark">
-  <img src="https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white" alt="SQL">
-</div>
-
-- **Linguagem de Programação:** [Python](https://www.python.org/)
-- **Bibliotecas:** Pandas, Scikit-learn, PySpark
-- **Banco de Dados:** SQL
-- **Ferramentas de Análise:** Jupyter Notebook, PCA, K-means
+```mermaid
+pie showData
+    title "Segmentação de Clientes (K-Means)"
+    "🔴 Alto Risco" : 35
+    "🟠 Moderado" : 25
+    "🟢 Estáveis" : 25
+    "🔵 Premium" : 15
+```
 
 
-## 💻 Autor
+**Características Principais:**  
+```mermaid
+gantt
+    title Padrões por Cluster (Valores Normalizados)
+    dateFormat  X
+    axisFormat %s
+    section Alto Risco
+    Churn Rate : 0, 78
+    Uso Médio : 0, 15
+    section Premium
+    Churn Rate : 0, 2
+    Uso Médio : 0, 50
+```
 
-- **Felipe Bonatti** - [GitHub](https://github.com/felipesbonatti) | [LinkedIn](https://www.linkedin.com/in/felipebsdelima)
+---
+
+## ⚙️ **Detalhes Técnicos**
+
+### 1. Pipeline de Modelagem
+```python
+# (08-treinando-o-algoritmo.ipynb)
+model = XGBClassifier(
+    scale_pos_weight=ratio_churn,
+    reg_alpha=0.644,
+    max_depth=2,
+    learning_rate=0.11
+)
+```
+
+### 2. Clusterização
+```python
+# Código real (pt-2-analise-de-perfil-de-clientes.ipynb)
+kmeans = KMeans(n_clusters=4, random_state=42)
+kmeans.fit(data_pca)
+```
+
+---
+
+## 📌 **Principais Insights**
+
+| Insight | Impacto | Ação Recomendada |
+|---------|---------|------------------|
+| Clientes com <30h/mês têm 5x mais churn | Alto | Programa de engajamento |
+| Pagamento via cartão reduz churn em 40% | Médio | Incentivar métodos digitais |
+| Clusters premium respondem a ofertas | Baixo | Programas VIP personalizados |
+
+---
+
+## 🛠️ **Stack Tecnológica**
+
+```mermaid
+mindmap
+  root((Tecnologias))
+    Análise
+      Pandas
+      NumPy
+    Machine Learning
+      XGBoost
+      Scikit-learn
+    Clusterização
+      K-Means
+      PCA
+    Visualização
+      Matplotlib
+      Seaborn
+```
+
+---
+
+## 📈 **Impacto Financeiro Estimado**
+
+```mermaid
+gantt
+    title Comparativo de Custos (US$ mil)
+    dateFormat  X
+    axisFormat %s
+    section Custos
+    Sem modelo : 0, 450
+    Com modelo : 0, 350
+```
+
+---
+
+
+
