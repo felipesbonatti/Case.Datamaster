@@ -88,7 +88,7 @@ model = XGBClassifier(
 
 ### 2. Clusterização
 ```python
-# Código real (pt-2-analise-de-perfil-de-clientes.ipynb)
+# (pt-2-analise-de-perfil-de-clientes.ipynb)
 kmeans = KMeans(n_clusters=4, random_state=42)
 kmeans.fit(data_pca)
 ```
